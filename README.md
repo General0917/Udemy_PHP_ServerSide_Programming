@@ -1,0 +1,2 @@
+# Udemy_PHP_ServerSide_Programming
+Udemy学習教材(本格的なWebシステム開発に欠かせない、サーバーサイドプログラミングをPHP+MySQLで学ぼう。)
