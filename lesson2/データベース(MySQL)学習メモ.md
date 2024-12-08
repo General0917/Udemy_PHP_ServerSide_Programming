@@ -129,4 +129,58 @@
   ```
   
 ## いろいろな条件での検索(WHERE)
-- 
+- 不等号を使った検索
+  - 例えば、idが1より大きいデータを検索する場合は、以下のSQL文を実行する。
+    ```
+    SELECT * FROM `my_items` WHERE id>1;
+    ```
+  - idが1以上のデータを検索する場合は、以下のSQL文を実行する。
+    ```
+    SELECT * FROM `my_items` WHERE id>=1;
+    ```
+  - idが1でないデータを検索する場合は、以下のSQL文を実行する。
+    ```
+    SELECT * FROM `my_items` WHERE id!=1;
+    ```
+
+- LIKE検索を使った検索
+  - 例えば、keywordが'甘い'で始まるデータを検索する場合は、以下のSQL文を実行する。
+    ```
+    SELECT * FROM `my_items` WHERE keyword LIKE '甘い%';
+    ```
+  - keywordが'甘い'で終わるデータを検索する場合は、以下のSQL文を実行する。
+    ```
+    SELECT * FROM `my_items` WHERE keyword LIKE '%甘い';
+    ```
+  - keywordに'甘い'が含まれるデータを検索する場合は、以下のSQL文を実行する。
+    ```
+    SELECT * FROM `my_items` WHERE keyword LIKE '%甘い%';
+    ```
+    
+- AND条件を使った検索
+  - 例えば、priceが100より大きい且つ、priceが200より低いデータを検索する場合は、以下のSQL文を実行する。
+    ```
+    SELECT * FROM `my_items` WHERE price>100 AND price<200;
+    ```
+    
+- OR条件を使った検索
+  - 例えば、priceが100より大きいまたは、priceが200より低いデータを検索する場合は、以下のSQL文を実行する。
+    ```
+    SELECT * FROM `my_items` WHERE price>100 OR price<200;
+    ```
+    
+## データのソート(ORDER BY)
+- priceを昇順でソートする場合は、以下のSQL文を実行する。
+  ```
+  SELECT * FROM `my_items` ORDER BY price ASC;
+  ```
+  
+- priceが100円より大きいデータをpriceの昇順でソートする場合は、以下のSQL文を実行する。
+  ```
+  SELECT * FROM `my_items` WHERE price>100 ORDER BY price ASC;
+  ```
+  
+- カタカタ(item_name_kana)を昇順でソートする場合は、以下のSQL文を実行する。
+  ```
+  SELECT * FROM `my_items` ORDER BY item_name_kana;
+  ```
